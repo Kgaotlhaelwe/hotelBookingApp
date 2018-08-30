@@ -1,0 +1,70 @@
+page-hotel-view {
+
+    #maincontent{
+        background-color:#323643;
+        color:white;
+        font-family: Futura, Trebuchet MS, Arial, sans-serif
+    
+
+    }
+
+    #btn{
+        position: relative;
+        
+      
+    }
+
+    h1{
+        position: relative;
+        top:35%;
+    }
+
+    #box{
+       
+        width:100%;
+    }
+
+
+    h6{
+        color:white;
+        text-align: center;
+        text-transform: uppercase;
+       
+    }
+
+    i{
+        color:white;
+    }
+
+    ion-icon{
+        color:goldenrod;
+    }
+
+    .icon{
+        color:white;
+    }
+
+    .box{
+        background-color: rgba(0,0,0,0)
+    }
+
+    h6{
+        color:white;
+    }
+
+    #bookbtn{
+        border:solid 1px white;
+        color:white;
+    }
+
+    ion-segment-button{
+        background-color: white;
+        border-bottom-color:solid 1px white;
+    }
+
+    #pricebox{
+        //background-color: white;
+       // color:#323643;
+    }
+
+}

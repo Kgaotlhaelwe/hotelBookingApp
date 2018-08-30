@@ -1,0 +1,58 @@
+
+
+
+<ion-content padding text-center  id="main">
+
+<br> <br> <br> <br> <br><br> 
+<h1>leisure hotel</h1>
+<br><br> 
+
+  <ion-item class="item">
+    <ion-label fixed>
+
+      <div class="btn">
+        <ion-icon name="mail" text-center></ion-icon>
+      </div>
+
+
+    </ion-label>
+    <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+  <ion-item class="item">
+    <ion-label fixed>
+
+      <div class="btn">
+        <ion-icon name="lock" id="lock" text-center></ion-icon>
+      </div>
+
+
+    </ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item> <br>
+
+
+
+
+  <button ion-button round  block (click)="signIn(user)" id="signInbtn">Sign in</button>
+  <br>
+
+  <button ion-button round outline block   id="signOutbtn"(click)="signUp()"  >Sign up</button>
+
+
+  <br>
+
+
+
+
+
+</ion-content>
+
+<ion-footer text-center id="footer">
+
+    <button ion-button  outline class="btns"><i class="fa fa-facebook-f"></i></button>
+    <button ion-button  outline class="btns"><i class="fa fa-twitter"></i></button>
+    <button ion-button  outline class="btns"><i class="fa fa-google-plus-g"></i></button>
+  
+
+</ion-footer>

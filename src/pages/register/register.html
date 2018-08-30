@@ -1,0 +1,82 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding  id="maincontent">
+
+  
+       
+    <ion-item class="item">
+        <ion-label fixed>
+          <div class="btn">    <ion-icon ios="ios-person" md="md-person"></ion-icon></div>
+          
+          </ion-label>
+        <ion-input type="text" [(ngModel)]="FirstName" ></ion-input>
+      </ion-item>
+
+
+      <ion-item class="item">
+          <ion-label fixed>
+            <div class="btn">    <ion-icon ios="ios-person" md="md-person"></ion-icon></div>
+            
+            </ion-label>
+          <ion-input type="text" [(ngModel)]="lastName" ></ion-input>
+        </ion-item>
+
+
+        <ion-item class="item">
+            <ion-label fixed>
+              <div class="btn">    <ion-icon ios="ios-call" md="md-call"></ion-icon></div>
+              
+              </ion-label>
+            <ion-input type="text" [(ngModel)]="phoneNumber" ></ion-input>
+          </ion-item>
+
+
+    <ion-item class="item">
+      
+        <ion-label fixed>
+            <div class="btn"> <ion-icon name="mail"></ion-icon></div>
+         </ion-label>
+           <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+      
+       </ion-item>
+
+    <ion-item class="item">
+      <ion-label fixed>
+        <div class="btn">  <ion-icon name="lock" id="lock" text-center></ion-icon></div>
+        
+        </ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" ></ion-input>
+    </ion-item>
+
+    
+    
+   
+
+    
+    <br>
+
+
+  <button ion-button round outline block  id="signupbtn"(click)="signUp(user)">Sign up</button> <br>
+</ion-content>
+
+<ion-footer text-center id="footer">
+
+    <button ion-button  outline class="btns"><i class="fa fa-facebook-f"></i></button>
+    <button ion-button  outline class="btns"><i class="fa fa-twitter"></i></button>
+    <button ion-button  outline class="btns"><i class="fa fa-google-plus-g"></i></button>
+  
+
+</ion-footer>
