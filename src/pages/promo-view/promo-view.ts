@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import arrry from '../../pages/home/home';
+import { ToastController } from 'ionic-angular';
 
 
 declare var firebase;
@@ -33,7 +34,7 @@ export class PromoViewPage {
   temp = arrry[0];
 
   hote1A ;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public toastCtrl: ToastController) {
     this.hote1A="overview";
   }
 
@@ -49,12 +50,35 @@ export class PromoViewPage {
 
   books(){
 
+    let d = new Date() ;
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    var today =  year + "-"+ '0' + month + "-" +  day;
+
+    alert(today)
+
+    if(this.checkIn >= today && this.checkOut >=this.checkIn){
+      firebase.database().ref( 'bookings/' + this.temp ).push({
+
     
-    firebase.database().ref( 'bookings/' + this.temp ).push({
-      checkIn: this.checkIn ,
-      checkOut: this.checkOut,
-      roomType : this.roomType ,
-    });
+        checkIn: this.checkIn ,
+        checkOut: this.checkOut,
+        roomType : this.roomType ,
+      });
+
+    
+
+
+    }else{
+      const toast = this.toastCtrl.create({
+        message: 'PLEASE CHOOSE THE CURRENT DAY',
+        duration: 3000
+      });
+      toast.present();
+    }
+    
+   
 }
 
 
