@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-      <button ion-button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Hotels</ion-title>
@@ -24,7 +24,7 @@
       <h6>Best Rating</h6>
     </ion-segment-button>
     <ion-segment-button value="puppies">
-     <h6>Promo only</h6> 
+      <h6>Promo only</h6>
     </ion-segment-button>
   </ion-segment>
 
@@ -52,23 +52,25 @@
   </ion-card>
 
 
-  
+
   <ion-card>
-  <div *ngFor="let v of arry ; let s =index">
-    <div [ngSwitch]="hote1A">
-      <div *ngSwitchCase="'puppies'">
-        <div (click)="promoview(s)">
-          <img src="{{v.image}}" />
-          <ion-card-content>
-            <ion-card-title>
-              {{v.hotelName}}
-            </ion-card-title>
-            <ion-icon ios="ios-star" md="md-star"></ion-icon>
-            <ion-icon ios="ios-star" md="md-star"></ion-icon>
-            <ion-icon ios="ios-star" md="md-star"></ion-icon>
-            <ion-icon ios="ios-star" md="md-star"></ion-icon>
-            <h3>{{v.price}}</h3>
-          </ion-card-content>
+    <div *ngFor="let v of arry ; let s =index">
+      <div [ngSwitch]="hote1A">
+        <div *ngSwitchCase="'puppies'">
+          <div (click)="promoview(s)">
+            <img src="{{v.image}}" />
+            <ion-card-content>
+              <ion-card-title>
+                {{v.hotelName}}
+              </ion-card-title>
+              <ion-icon ios="ios-star" md="md-star"></ion-icon>
+              <ion-icon ios="ios-star" md="md-star"></ion-icon>
+              <ion-icon ios="ios-star" md="md-star"></ion-icon>
+              <ion-icon ios="ios-star" md="md-star"></ion-icon>
+              <h3>{{v.price}}</h3>
+            </ion-card-content>
+
+          </div>
 
         </div>
 
@@ -76,8 +78,6 @@
 
     </div>
 
-  </div>
-
-</ion-card>
+  </ion-card>
 
 </ion-content>

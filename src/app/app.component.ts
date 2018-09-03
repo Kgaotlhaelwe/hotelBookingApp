@@ -5,10 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import {HotelsPage} from '../pages/hotels/hotels';
-import {BookingsPage} from "../pages/bookings/bookings"
+import { HotelsPage } from '../pages/hotels/hotels';
+import { BookingsPage } from "../pages/bookings/bookings"
 
-declare var firabase;
+declare var firebase;
 
 
 @Component({
@@ -17,19 +17,38 @@ declare var firabase;
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+
+  public rootPage: any = HomePage
+
+  signout;
+
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+    firebase.auth().onAuthStateChanged(user => {
+
+      if (user) {
+        this.rootPage = HotelsPage
+        console.log(user)
+      } else {
+        // No user is signed in.
+        this.rootPage = HomePage
+      }
+    })
+    //this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-     
-      { title: 'Bookings', component: ListPage } ,
-     
+
+      { title: 'Bookings', component: ListPage },
+
     ];
+
+
+
+
+
 
   }
 
@@ -45,17 +64,41 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    //this.nav.setRoot(page.component);
   }
 
 
-  signOut(){
+  signOut() {
 
-   // alert("sign out")
-    //firabase.auth().signOut();
-
+    firebase.auth().signOut();
     this.nav.setRoot(HomePage);
 
+
+
+    // firebase.auth().signOut().then(function() {
+    //   this.nav.push(HomePage)
+
+    // }, function(error) {
+    //   console.error('Sign Out Error', error);
+    // });
+
+
+
   }
+
+  userState() {
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        this.rootPage = HotelsPage
+
+      } else {
+        // No user is signed in.
+      }
+    });
+
+  }
+
+
+
 
 }

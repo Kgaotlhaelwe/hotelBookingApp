@@ -7,36 +7,40 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content  id="main">
-    <ion-list *ngFor= "let a of arr" >
+<ion-content id="main">
+  <ion-list *ngFor="let a of arr">
 
-        
 
-   <ion-item-sliding  class="box">
+
+    <ion-item-sliding class="box">
 
       <ion-item class="box">
-          <ion-thumbnail item-start>
-            <img src="{{a.image}}">
-          </ion-thumbnail>
+        <ion-thumbnail item-start>
+          <img src="{{a.image}}">
+        </ion-thumbnail>
 
-          <span> CHECKIN : &nbsp;  &nbsp;   {{a.checkIn}}</span> <br>  <span> CHECKOUT : &nbsp; {{a.checkOut}}</span>   <br>  <span>  ROOMTYPE : &nbsp; {{a.roomType}}</span> 
-        
-        </ion-item>
+        <span> CHECKIN : &nbsp; &nbsp; {{a.checkIn}}</span>
+        <br>
+        <span> CHECKOUT : &nbsp; {{a.checkOut}}</span>
+        <br>
+        <span> ROOMTYPE : &nbsp; {{a.roomType}}</span>
 
-    
-      <ion-item-options side="right"  class="box">
-          <button ion-button color="danger" (click)="delete(a.key)">
-            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
-              
-            cancel
-          </button>
-          <button ion-button color="secondary" (click)="update(a.key)">
-            <ion-icon ios="ios-create" md="md-create" ></ion-icon>
-            update
-          </button>
-        </ion-item-options>
-          
-        
-  </ion-item-sliding>
-    </ion-list>
+      </ion-item>
+
+
+      <ion-item-options side="right" class="box">
+        <button ion-button color="danger" (click)="delete(a.key)">
+          <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+
+          cancel
+        </button>
+        <button ion-button color="secondary" (click)="update(a.key)">
+          <ion-icon ios="ios-create" md="md-create"></ion-icon>
+          update
+        </button>
+      </ion-item-options>
+
+
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

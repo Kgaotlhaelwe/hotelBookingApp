@@ -28,92 +28,92 @@ export class HotelViewPage {
 
   obj = this.navParams.get('obj');
 
-  arr:any [] = this.navParams.get('jj');
+  arr: any[] = this.navParams.get('jj');
 
   objs = this.navParams.get('objs');
 
-  image=this.arr[this.obj].image;
-  description=this.arr[this.obj].description;
-  price=this.arr[this.obj].price;
-  hotelName=this.arr[this.obj].hotelName;
-  review=this.arr[this.obj].review;
-  roomType=this.arr[this.obj].roomType;
+  image = this.arr[this.obj].image;
+  description = this.arr[this.obj].description;
+  price = this.arr[this.obj].price;
+  hotelName = this.arr[this.obj].hotelName;
+  review = this.arr[this.obj].review;
+  roomType = this.arr[this.obj].roomType;
 
   checkIn;
-  checkOut ;
- name= this.navParams.get("name");
- 
- firstName ;
- lastName;
+  checkOut;
+  name = this.navParams.get("name");
+
+  firstName;
+  lastName;
 
 
-  
 
- hote1A ;
-  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public alertCtrl: AlertController, public toastCtrl: ToastController) {
-    this.hote1A="overview";
-   
-    
+  hote1A;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public toastCtrl: ToastController) {
+    this.hote1A = "overview";
+
+
   }
 
   ionViewDidLoad() {
     console.log("hotelview");
 
-  
-
-
-    
-}
 
 
 
 
-
-    
-    books(){
-      let d = new Date() ;
-      var day = d.getDate();
-      var month = d.getMonth() + 1;
-      var year = d.getFullYear();
-      var today =  year + "-"+ '0' + month + "-" + "0"+ day;
-      var users= firebase.auth().currentUser.email;
-  
-    
-    
-      if(this.checkIn >= today && this.checkOut >=this.checkIn){
-          
-        firebase.database().ref( 'bookings/' + this.temp ).push({
-          image:this.image ,
-          email:users ,
-          checkIn: this.checkIn ,
-          checkOut: this.checkOut,
-          roomType : this.roomType ,
-
-
-        });
-
-        const toast = this.toastCtrl.create({
-          message: 'YOUR BOOKING WAS SUCCESSFUL',
-          duration: 3000
-        });
-        toast.present();
-  
-      
-  
-  
-      }else{
-        const toast = this.toastCtrl.create({
-          message: 'PLEASE CHOOSE THE CURRENT DAY',
-          duration: 3000
-        });
-        toast.present();
-      }
-      
-     
   }
-  
+
+
+
+
+
+
+  books() {
+    let d = new Date();
+    var day = d.getDate();
+    var month = d.getMonth() + 1;
+    var year = d.getFullYear();
+    var today = year + "-" + '0' + month + "-" + "0" + day;
+    var users = firebase.auth().currentUser.email;
+
+
+
+    if (this.checkIn >= today && this.checkOut >= this.checkIn) {
+
+      firebase.database().ref('bookings/' + this.temp).push({
+        image: this.image,
+        email: users,
+        checkIn: this.checkIn,
+        checkOut: this.checkOut,
+        roomType: this.roomType,
+
+
+      });
+
+      const toast = this.toastCtrl.create({
+        message: 'YOUR BOOKING WAS SUCCESSFUL',
+        duration: 3000
+      });
+      toast.present();
+
+
+
+
+    } else {
+      const toast = this.toastCtrl.create({
+        message: 'PLEASE CHOOSE THE CURRENT DAY',
+        duration: 3000
+      });
+      toast.present();
+    }
+
+
+  }
+
 
 }
 
