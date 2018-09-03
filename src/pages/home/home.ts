@@ -29,6 +29,15 @@ user = {} as user ;
 
   signIn(user:user){
 
+
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+  } else {
+    // No user is signed in.
+  }
+});
+
  if(user.email !=undefined && user.password !=undefined){
 
   firebase.auth().signInWithEmailAndPassword( user.email, user.password).then(()=> {

@@ -38,9 +38,16 @@ export class ListPage {
                 checkIn: a[k].checkIn ,
                 checkOut:a[k].checkOut ,
                 roomType:a[k].roomType ,
-                key:k
+                image:a[k].image ,
+                key:k ,
+
+            
+                
   
         }
+
+        console.log(a[k].image );
+       
   
           this.arr.push(obj)
     }

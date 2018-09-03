@@ -10,15 +10,20 @@
 <ion-content  id="main">
     <ion-list *ngFor= "let a of arr" >
 
+        
+
    <ion-item-sliding  class="box">
 
-    <ion-item class="box">
+      <ion-item class="box">
+          <ion-thumbnail item-start>
+            <img src="{{a.image}}">
+          </ion-thumbnail>
 
-
-      <span> CHECKIN : &nbsp;  &nbsp;   {{a.checkIn}}</span>  <br> <span> CHECKOUT : &nbsp; {{a.checkOut}}</span> <br>  <span>  ROOMTYPE : &nbsp; {{a.roomType}}</span>   
+          <span> CHECKIN : &nbsp;  &nbsp;   {{a.checkIn}}</span> <br>  <span> CHECKOUT : &nbsp; {{a.checkOut}}</span>   <br>  <span>  ROOMTYPE : &nbsp; {{a.roomType}}</span> 
+        
+        </ion-item>
 
     
-    </ion-item>
       <ion-item-options side="right"  class="box">
           <button ion-button color="danger" (click)="delete(a.key)">
             <ion-icon ios="ios-trash" md="md-trash"></ion-icon>

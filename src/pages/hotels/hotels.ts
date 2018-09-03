@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HotelViewPage} from '../../pages/hotel-view/hotel-view';
 
 import {PromoViewPage} from '../promo-view/promo-view';
-
+import { AlertController } from 'ionic-angular';
 declare var firebase;
 
 /**
@@ -61,6 +61,8 @@ objs = this.navParams.get('obj');
 
 
   view(a){
+
+    alert(this.hote1A)
 
   
 

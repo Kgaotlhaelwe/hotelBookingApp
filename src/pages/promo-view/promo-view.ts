@@ -54,32 +54,46 @@ export class PromoViewPage {
     var day = d.getDate();
     var month = d.getMonth() + 1;
     var year = d.getFullYear();
-    var today =  year + "-"+ '0' + month + "-" +  day;
+    var today =  year + "-"+ '0' + month + "-" + "0"+ day;
+    var users= firebase.auth().currentUser.email;
+  console.log(day);
+  
+  console.log(this.checkIn) ;
+  console.log(today)
+if(this.checkIn >= today && this.checkOut >=this.checkIn){
+  firebase.database().ref( 'bookings/' + this.temp ).push({
+    image:this.image ,
+    email:users ,
+    checkIn: this.checkIn ,
+    checkOut: this.checkOut,
+    roomType : this.roomType ,
+  });
+  
+  const toast = this.toastCtrl.create({
+    message: 'YOUR BOOKING WAS SUCCESSFUL',
+    duration: 3000
+  });
+  toast.present();
 
-    alert(today)
 
-    if(this.checkIn >= today && this.checkOut >=this.checkIn){
-      firebase.database().ref( 'bookings/' + this.temp ).push({
+}  else {
 
-    
-        checkIn: this.checkIn ,
-        checkOut: this.checkOut,
-        roomType : this.roomType ,
-      });
-
-    
-
-
-    }else{
-      const toast = this.toastCtrl.create({
-        message: 'PLEASE CHOOSE THE CURRENT DAY',
-        duration: 3000
-      });
-      toast.present();
-    }
+  const toast = this.toastCtrl.create({
+    message: 'PLEASE CHOOSE THE CURRENT DAY',
+    duration: 3000
+  });
+  toast.present();
+  
+  
+  
+  
+}
     
    
-}
+  }
 
 
 }
+
+
+
