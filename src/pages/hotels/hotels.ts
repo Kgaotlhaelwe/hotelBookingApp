@@ -20,6 +20,8 @@ declare var firebase;
 })
 export class HotelsPage {
 
+   v  ;
+
   timeStarts;
   hote1A;
   arr = [new Hotel("../../assets/imgs/Chicago-Trump.jpg", "leisure hotel", "R1230", "leisure hotel is a small but a very good hotel, we were really pleased. Orion hotel is very close to the beach, and the sea is cleanand clear. The rooms are comfortable, also... Orion hotel is very close to the beach, and the sea is cleanand clea", ["Great hosptality,", "NICE FOOD AND HOTEL", "Great hosptality"], "Luxuary ROOM"),
