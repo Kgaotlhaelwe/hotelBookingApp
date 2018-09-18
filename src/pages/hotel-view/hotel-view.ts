@@ -77,12 +77,17 @@ export class HotelViewPage {
     var day = d.getDate();
     var month = d.getMonth() + 1;
     var year = d.getFullYear();
-    var today = year + "-" + '0' + month + "-" + "0" + day;
+    var today = year + "-" + '0' + month + "-"  + day;
     var users = firebase.auth().currentUser.email;
 
 
 
     if (this.checkIn >= today && this.checkOut >= this.checkIn) {
+
+      if(day <10 && month<10){
+        var today = year + "-" + '0' + month + "-" + "0"+ day;
+ 
+      }
 
       firebase.database().ref('bookings/' + this.temp).push({
         image: this.image,

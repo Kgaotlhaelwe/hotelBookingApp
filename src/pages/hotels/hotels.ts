@@ -20,7 +20,7 @@ declare var firebase;
 })
 export class HotelsPage {
 
-   v  ;
+   
 
   timeStarts;
   hote1A;
